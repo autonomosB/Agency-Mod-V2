@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header con animación suave -->
+        <header class="header">
+            <div class="logo-container">
+                <i class="fas fa-robot logo-icon"></i>
+                <h1>Agency<span>AI</span></h1>
+            </div>
+            <p class="tagline">Tu asistente de marketing impulsado por IA</p>
+        </header>
+
+        <!-- Formulario principal -->
+        <main class="main-content">
+            <div class="card">
+                <form id="analysisForm" class="analysis-form">
+                    <div class="input-group">
+                        <label for="brandTask">
+                            <i class="fas fa-building"></i>
+                            Empresa/Marca
+                        </label>
+                        <input type="text" id="brandTask" name="brandTask" placeholder="Ej: Nike, Coca-Cola, Tu Empresa" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="userTask">
+                            <i class="fas fa-tasks"></i>
+                            Objetivo/Problema
+                        </label>
+                        <textarea id="userTask" name="userTask" placeholder="Ej: Aumentar seguidores en redes sociales, Mejorar ventas online..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-magic"></i>
+                        Generar Estrategia
+                        <div class="button-loader hidden"></div>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contenedor de resultados -->
+            <div id="resultsContainer" class="results-container hidden">
+                <div class="results-header">
+                    <h2>Estrategia Generada</h2>
+                    <button class="copy-btn" title="Copiar resultados">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <div id="results" class="results-content">
+                    <!-- Aquí se mostrarán los resultados -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+
+
+        <!-- Loading overlay -->
+        <div id="loadingOverlay" class="loading-overlay hidden">
+            <div class="loader"></div>
+            <p>Generando estrategia personalizada...</p>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
