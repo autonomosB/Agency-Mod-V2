@@ -8,9 +8,9 @@ from openai import OpenAI
 from flask_cors import CORS
 from datetime import datetime
 
-# Crear la aplicación Flask
 app = Flask(__name__)
 CORS(app)
+
 
 # Cargar variables de entorno
 load_dotenv()
@@ -315,11 +315,5 @@ def analyze():
         }), 500
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 5000))
-    debug = os.getenv('FLASK_ENV', 'development') == 'development'
-    
-    app.run(
-        host='0.0.0.0',
-        port=port,
-        debug=debug
-    )
+    # Configuración simple para desarrollo local
+    app.run(debug=True)
